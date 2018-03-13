@@ -1,0 +1,17 @@
+--- 
+title: "CE080 - FUNDAMENTOS BÁSICOS PARA ESTATÍSTICA"
+author: ""
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: BGeronymo/Monitoria-CE080
+description: "Este material busca auxiliar na compreensão e nos estudos dos assuntos tratados na matéria *Fundamentos Básicos para Estatística* ministrada pela professora *Fernanda Buhrer Rizzato* no primeiro semestre de 2018 para os candidatos presentes na terceira fase de seleção de acadêmicos do curso de Estatística da Universidade Federal do Paraná (UFPR)."
+---
+
+# Prefácio {-}
+
+Este material busca auxiliar na compreensão e nos estudos dos assuntos tratados na matéria *Fundamentos Básicos para Estatística* (CE080) ministrada pela professora [*Fernanda Buhrer Rizzato*](http://leg.ufpr.br/doku.php/pessoais:fernanda) (<fernandab@ufpr.br>) no primeiro semestre de 2018 para os candidatos presentes na terceira fase de seleção de acadêmicos do curso de Estatística da Universidade Federal do Paraná ([UFPR](http://www.ufpr.br/)).
