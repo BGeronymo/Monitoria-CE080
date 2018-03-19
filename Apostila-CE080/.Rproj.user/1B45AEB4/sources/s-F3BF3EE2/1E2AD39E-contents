@@ -76,7 +76,7 @@ $\mathbb{N} \subset \mathbb{Z}$. Note também que $\mathbb{N}$ é equivalente a
 $\mathbb{Z}_{+}$.
 
 
-Na notação dos conjuntos dos números naturais podemos definir somente o operador
+Na notação do conjunto dos números naturais podemos definir somente o operador
 $*$ uma vez que, por natureza, ele só possui elementos não negativos.
 
 1. Números naturais positivos
@@ -98,7 +98,7 @@ $\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q}$. Então podemos dizer que
 todos número natural é um número inteiro, e todo numero inteiro é um número
 racional, sendo assim todo número natural é também racional.
 
-Na notação dos números racionais estão definidos os três operadores.
+Na notação do conjunto dos números racionais estão definidos os três operadores.
 
 1. Números racionais não-nulos
 
@@ -130,6 +130,26 @@ Na notação dos números racionais estão definidos os três operadores.
 
 
 ## Números Irracionais
+
+O conjunto dos números irracionais, denotado por $\mathbb{I}$, compreende todos
+números reais que não podem ser expressos através de $\frac{a}{b}$ em que
+$a \in \mathbb{Z}$ e $b \in \mathbb{Z}^{*}$. Desta forma temos:
+
+$$\mathbb{I} = \{a \mid \ a \in \mathbb{R}, a \notin \mathbb{Q} \}$$
+São exemplos de números irracionais: $\sqrt{2}$, $\sqrt{3}$, $e = 2,71828...$,
+$\pi = 3,14159...$, entre outros.
+
+Na notação do conjunto dos números irracionais estão definidos dois operadores:
+$+$ e $-$.
+
+1. Números irracionais positivos
+
+    $\mathbb{I}_{+} = \{a \mid \ a \in \mathbb{R}_{+}, a \notin \mathbb{Q} \}$
+
+2. Números irracionais negativos
+
+    $\mathbb{I}_{-} = \{a \mid \ a \in \mathbb{R}_{-}, a \notin \mathbb{Q} \}$
+
 
 ## Números Reais
 

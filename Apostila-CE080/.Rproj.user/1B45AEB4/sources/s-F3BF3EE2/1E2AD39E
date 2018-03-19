@@ -1,21 +1,21 @@
 {
     "collab_server" : "",
     "contents" : "",
-    "created" : 1521054074207.000,
+    "created" : 1521455406970.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "4240269945",
-    "id" : "F941B208",
-    "lastKnownWriteTime" : 1521424864,
-    "last_content_update" : 1521424864981,
+    "hash" : "0",
+    "id" : "1E2AD39E",
+    "lastKnownWriteTime" : 1521456869,
+    "last_content_update" : 1521456869420,
     "path" : "~/Projetos/Monitoria-CE080/Apostila-CE080/01-ConjuntosNumericos.Rmd",
     "project_path" : "01-ConjuntosNumericos.Rmd",
     "properties" : {
-        "cursorPosition" : "122,22",
-        "scrollLine" : "114"
+        "cursorPosition" : "9,34",
+        "scrollLine" : "0"
     },
-    "relative_order" : 2,
+    "relative_order" : 1,
     "source_on_save" : false,
     "source_window" : "",
     "type" : "r_markdown"
