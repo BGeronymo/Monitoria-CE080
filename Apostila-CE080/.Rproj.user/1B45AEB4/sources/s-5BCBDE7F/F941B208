@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "2779907499",
+    "hash" : "4240269945",
     "id" : "F941B208",
-    "lastKnownWriteTime" : 1521064435,
-    "last_content_update" : 1521064435952,
+    "lastKnownWriteTime" : 1521424864,
+    "last_content_update" : 1521424864981,
     "path" : "~/Projetos/Monitoria-CE080/Apostila-CE080/01-ConjuntosNumericos.Rmd",
     "project_path" : "01-ConjuntosNumericos.Rmd",
     "properties" : {
-        "cursorPosition" : "62,0",
-        "scrollLine" : "46"
+        "cursorPosition" : "122,22",
+        "scrollLine" : "114"
     },
     "relative_order" : 2,
     "source_on_save" : false,

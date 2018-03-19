@@ -82,7 +82,7 @@
   \preauthor{}\postauthor{}
   \predate{\centering\large\emph}
   \postdate{\par}
-  \date{2018-03-14}
+  \date{2018-03-18}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -129,7 +129,9 @@ De forma geral podemos denotar um conjunto em função das caracetísticas
 em comum de seus elementos. Seja \(C\) um conjunto de elementos \(e\)
 com uma característica em comum \(a\) definimos:
 
-\[C = \{ e \mid e \ \text{possui a característica} \ a\}\]
+\[C = \{ e \mid e \ \text{possui a característica} \ a\}\] Lê-se: \(C\)
+é o conjunto dos elementos \(e\) tal que \(e\) possui a característica
+\(a\).
 
 Retomando o exemplo do conjunto \(P\), podemos escrevê-lo em função de
 suas características (i e ii):
@@ -151,54 +153,115 @@ inteiros positivos. Desta forma temos:
 
 \[\mathbb{Z} = \{ ...,\ -3,\ -2,\ -1,\ 0,\ 1,\ 2,\ 3,\ ... \}\]
 
-Na notação de conjunto podemos incluir três operadores: \(*,\ +, \ -\)
-que servem respectivamente para denotar a ausência do elemento neutro
-(zero), presença somente de elementos não negativos e a presença somente
-de elementos não positivos. Com esses operadores obtemos diversas
-variações do conjunto \(\mathbb{Z}\), ou seja, subconjuntos do conjunto
-\(\mathbb{Z}\), são elas:
+Na notação de conjunto podemos incluir três operadores:
+\(*,\ + \ \text{e} \ -\) que servem respectivamente para denotar a
+ausência do elemento neutro (zero), presença somente de elementos não
+negativos e a presença somente de elementos não positivos. Com esses
+operadores obtemos diversas variações do conjunto \(\mathbb{Z}\), ou
+seja, subconjuntos do conjunto \(\mathbb{Z}\), são elas:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   Números inteiros não-nulos
-\end{enumerate}
 
-\[\mathbb{Z}^{*} = \{...,\ -3,\ -2,\ -1,\ 1,\ 2,\ 3,\ ... \}\] 2.
-Números inteiros não negativos
+  \(\mathbb{Z}^{*} = \{...,\ -3,\ -2,\ -1,\ 1,\ 2,\ 3,\ ... \}\)
+\item
+  Números inteiros não negativos
 
-\[\mathbb{Z}_{+} = \{0,\ 1,\ 2,\ 3,\ ... \}\]
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{2}
-\tightlist
+  \(\mathbb{Z}_{+} = \{0,\ 1,\ 2,\ 3,\ ... \}\)
 \item
   Números inteiros não positivos
-\end{enumerate}
 
-\[\mathbb{Z}_{-} = \{...,\ -3,\ -2,\ -1,\ 0 \}\]
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{3}
-\tightlist
+  \(\mathbb{Z}_{-} = \{...,\ -3,\ -2,\ -1,\ 0 \}\)
 \item
   Números inteiros positivos
+
+  \(\mathbb{Z}_{+}^{*} = \{ 1,\ 2,\ 3,\ ... \}\)
+\item
+  Números inteiros negativos
+
+  \(\mathbb{Z}_{-}^{*} = \{...,\ -3,\ -2,\ -1 \}\)
 \end{enumerate}
 
-\[\mathbb{Z}_{+}^{*} = \{ 1,\ 2,\ 3,\ ... \}\]
+\section{Números Naturais}\label{numeros-naturais}
+
+O conjunto dos números naturais, denotado por \(\mathbb{N}\), compreende
+todos os números inteiros não negativos (inclui o zero). Desta forma
+temos:
+
+\[\mathbb{N} = \{ 0,\ 1,\ 2,\ 3,\ ... \}\]
+
+Repare que o conjunto \(\mathbb{N}\) é um subconjunto de \(\mathbb{Z}\),
+ou seja, \(\mathbb{N} \subset \mathbb{Z}\). Note também que
+\(\mathbb{N}\) é equivalente a \(\mathbb{Z}_{+}\).
+
+Na notação dos conjuntos dos números naturais podemos definir somente o
+operador \(*\) uma vez que, por natureza, ele só possui elementos não
+negativos.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{4}
-\tightlist
 \item
-  Números inteiros negativos
+  Números naturais positivos
+
+  \(\mathbb{N}^{*} = \{ 1,\ 2,\ 3,\ ... \}\)
 \end{enumerate}
 
-\[\mathbb{Z}_{-}^{*} = \{...,\ -3,\ -2,\ -1 \}\]
+\section{Números Racionais}\label{numeros-racionais}
+
+O conjunto dos números naturais, denotado por \(\mathbb{Q}\), compreende
+todos os números da forma \(\frac{a}{b}\) onde \(a \in \mathbb{Z}\) e
+\(b \in \mathbb{Z}^{*}\). Desta forma temos:
+
+\[\mathbb{Q} = \{ \frac{a}{b} \mid \ a \in \mathbb{Z},\ b \in \mathbb{Z}^{*} \}\]
+
+Repare que o conjunto \(\mathbb{Z}\) é subconjunto de \(\mathbb{Q}\) e
+\(\mathbb{N}\) é subconjunto de \(\mathbb{Z}\), ou seja
+\(\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q}\). Então podemos
+dizer que todos número natural é um número inteiro, e todo numero
+inteiro é um número racional, sendo assim todo número natural é também
+racional.
+
+Na notação dos números racionais estão definidos os três operadores.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Números racionais não-nulos
+
+  \(\mathbb{Q}^{*} = \{ \frac{a}{b} \mid \ a \in \mathbb{Z}^{*},\ b \in \mathbb{Z}^{*} \}\)
+\item
+  Números racionais não negativos
+
+  \(\mathbb{Q}_{+} = \{ \frac{a}{b} \mid \ a \in \mathbb{Z}_{+},\ b \in \mathbb{Z}_{+}^{*} \}\)
+
+  \(\mathbb{Q}_{+} = \{ \frac{a}{b} \mid \ a \in \mathbb{Z}_{-},\ b \in \mathbb{Z}_{-}^{*} \}\)
+\item
+  Números racionais não positivos
+
+  \(\mathbb{Q}_{-} = \{ \frac{a}{b} \mid \ a \in \mathbb{Z}_{-},\ b \in \mathbb{Z}_{+}^{*} \}\)
+
+  \(\mathbb{Q}_{-} = \{ \frac{a}{b} \mid \ a \in \mathbb{Z}_{+},\ b \in \mathbb{Z}_{-}^{*} \}\)
+\item
+  Números racionais positivos
+
+  \(\mathbb{Q}_{+}^{*} = \{ \frac{a}{b} \mid \ a \in \mathbb{Z}_{+}^{*},\ b \in \mathbb{Z}_{+}^{*} \}\)
+
+  \(\mathbb{Q}_{+}^{*} = \{ \frac{a}{b} \mid \ a \in \mathbb{Z}_{-}^{*},\ b \in \mathbb{Z}_{-}^{*} \}\)
+\item
+  Números racionais negativos
+
+  \(\mathbb{Q}_{-}^{*} = \{ \frac{a}{b} \mid \ a \in \mathbb{Z}_{-}^{*},\ b \in \mathbb{Z}_{+}^{*} \}\)
+
+  \(\mathbb{Q}_{-}^{*} = \{ \frac{a}{b} \mid \ a \in \mathbb{Z}_{+}^{*},\ b \in \mathbb{Z}_{-}^{*} \}\)
+\end{enumerate}
+
+\section{Números Irracionais}\label{numeros-irracionais}
+
+\section{Números Reais}\label{numeros-reais}
+
+\section{Operações com Conjuntos}\label{operacoes-com-conjuntos}
 
 \chapter{Sem Título}\label{sem-titulo}
 

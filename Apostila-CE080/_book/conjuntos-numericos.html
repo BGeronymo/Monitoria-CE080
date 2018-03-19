@@ -24,7 +24,7 @@
 
 
 
-<meta name="date" content="2018-03-14">
+<meta name="date" content="2018-03-18">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -68,6 +68,11 @@
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefácio</a></li>
 <li class="chapter" data-level="1" data-path="conjuntos-numericos.html"><a href="conjuntos-numericos.html"><i class="fa fa-check"></i><b>1</b> Conjuntos Numéricos</a><ul>
 <li class="chapter" data-level="1.1" data-path="conjuntos-numericos.html"><a href="conjuntos-numericos.html#numeros-inteiros"><i class="fa fa-check"></i><b>1.1</b> Números Inteiros</a></li>
+<li class="chapter" data-level="1.2" data-path="conjuntos-numericos.html"><a href="conjuntos-numericos.html#numeros-naturais"><i class="fa fa-check"></i><b>1.2</b> Números Naturais</a></li>
+<li class="chapter" data-level="1.3" data-path="conjuntos-numericos.html"><a href="conjuntos-numericos.html#numeros-racionais"><i class="fa fa-check"></i><b>1.3</b> Números Racionais</a></li>
+<li class="chapter" data-level="1.4" data-path="conjuntos-numericos.html"><a href="conjuntos-numericos.html#numeros-irracionais"><i class="fa fa-check"></i><b>1.4</b> Números Irracionais</a></li>
+<li class="chapter" data-level="1.5" data-path="conjuntos-numericos.html"><a href="conjuntos-numericos.html#numeros-reais"><i class="fa fa-check"></i><b>1.5</b> Números Reais</a></li>
+<li class="chapter" data-level="1.6" data-path="conjuntos-numericos.html"><a href="conjuntos-numericos.html#operacoes-com-conjuntos"><i class="fa fa-check"></i><b>1.6</b> Operações com Conjuntos</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="sem-titulo.html"><a href="sem-titulo.html"><i class="fa fa-check"></i><b>2</b> Sem Título</a></li>
 <li class="chapter" data-level="3" data-path="sem-titulo-1.html"><a href="sem-titulo-1.html"><i class="fa fa-check"></i><b>3</b> Sem Título</a></li>
@@ -100,7 +105,7 @@
 <p><span class="math display">\[P = \{ 2,\ 4,\ 6,\ 8,\ 10,\ 12,\ ...\}\]</span></p>
 <p>Onde a característica em comum entre os elementos de <span class="math inline">\(P\)</span> é a satisfação dos requisitos: i) ser par; ii) ser positivo.</p>
 <p>De forma geral podemos denotar um conjunto em função das caracetísticas em comum de seus elementos. Seja <span class="math inline">\(C\)</span> um conjunto de elementos <span class="math inline">\(e\)</span> com uma característica em comum <span class="math inline">\(a\)</span> definimos:</p>
-<p><span class="math display">\[C = \{ e \mid e \ \text{possui a característica} \ a\}\]</span></p>
+<p><span class="math display">\[C = \{ e \mid e \ \text{possui a característica} \ a\}\]</span> Lê-se: <span class="math inline">\(C\)</span> é o conjunto dos elementos <span class="math inline">\(e\)</span> tal que <span class="math inline">\(e\)</span> possui a característica <span class="math inline">\(a\)</span>.</p>
 <p>Retomando o exemplo do conjunto <span class="math inline">\(P\)</span>, podemos escrevê-lo em função de suas características (i e ii):</p>
 <p><span class="math display">\[P = \{x \mid x = 2n \ \forall \ n \in \mathbb{N}^{*} \}\]</span></p>
 <p>Repare que <span class="math inline">\(n\)</span> pertence a um conjunto denotado por <span class="math inline">\(\mathbb{N}^{*}\)</span>. O conjunto <span class="math inline">\(\mathbb{N}^{*}\)</span> possui apenas elementos positivos e inteiros (zero não está incluso pois não é positivo e sim neutro). Logo os valores de <span class="math inline">\(x\)</span> serão os valores de <span class="math inline">\(n\)</span> multiplicados por <span class="math inline">\(2\)</span>, desta forma todos os valores de <span class="math inline">\(x\)</span> serão positivos e pares. Falaremos mais sobre o conjunto <span class="math inline">\(\mathbb{N}\)</span> nas próximas seções.</p>
@@ -108,24 +113,62 @@
 <h2><span class="header-section-number">1.1</span> Números Inteiros</h2>
 <p>O conjunto dos números inteiros, denotado por <span class="math inline">\(\mathbb{Z}\)</span>, compreende todos os números inteiros não positivos (inclui o zero) e os números inteiros positivos. Desta forma temos:</p>
 <p><span class="math display">\[\mathbb{Z} = \{ ...,\ -3,\ -2,\ -1,\ 0,\ 1,\ 2,\ 3,\ ... \}\]</span></p>
-<p>Na notação de conjunto podemos incluir três operadores: <span class="math inline">\(*,\ +, \ -\)</span> que servem respectivamente para denotar a ausência do elemento neutro (zero), presença somente de elementos não negativos e a presença somente de elementos não positivos. Com esses operadores obtemos diversas variações do conjunto <span class="math inline">\(\mathbb{Z}\)</span>, ou seja, subconjuntos do conjunto <span class="math inline">\(\mathbb{Z}\)</span>, são elas:</p>
+<p>Na notação de conjunto podemos incluir três operadores: <span class="math inline">\(*,\ + \ \text{e} \ -\)</span> que servem respectivamente para denotar a ausência do elemento neutro (zero), presença somente de elementos não negativos e a presença somente de elementos não positivos. Com esses operadores obtemos diversas variações do conjunto <span class="math inline">\(\mathbb{Z}\)</span>, ou seja, subconjuntos do conjunto <span class="math inline">\(\mathbb{Z}\)</span>, são elas:</p>
 <ol style="list-style-type: decimal">
-<li>Números inteiros não-nulos</li>
+<li><p>Números inteiros não-nulos</p>
+<p><span class="math inline">\(\mathbb{Z}^{*} = \{...,\ -3,\ -2,\ -1,\ 1,\ 2,\ 3,\ ... \}\)</span></p></li>
+<li><p>Números inteiros não negativos</p>
+<p><span class="math inline">\(\mathbb{Z}_{+} = \{0,\ 1,\ 2,\ 3,\ ... \}\)</span></p></li>
+<li><p>Números inteiros não positivos</p>
+<p><span class="math inline">\(\mathbb{Z}_{-} = \{...,\ -3,\ -2,\ -1,\ 0 \}\)</span></p></li>
+<li><p>Números inteiros positivos</p>
+<p><span class="math inline">\(\mathbb{Z}_{+}^{*} = \{ 1,\ 2,\ 3,\ ... \}\)</span></p></li>
+<li><p>Números inteiros negativos</p>
+<p><span class="math inline">\(\mathbb{Z}_{-}^{*} = \{...,\ -3,\ -2,\ -1 \}\)</span></p></li>
 </ol>
-<p><span class="math display">\[\mathbb{Z}^{*} = \{...,\ -3,\ -2,\ -1,\ 1,\ 2,\ 3,\ ... \}\]</span> 2. Números inteiros não negativos</p>
-<p><span class="math display">\[\mathbb{Z}_{+} = \{0,\ 1,\ 2,\ 3,\ ... \}\]</span></p>
-<ol start="3" style="list-style-type: decimal">
-<li>Números inteiros não positivos</li>
+</div>
+<div id="numeros-naturais" class="section level2">
+<h2><span class="header-section-number">1.2</span> Números Naturais</h2>
+<p>O conjunto dos números naturais, denotado por <span class="math inline">\(\mathbb{N}\)</span>, compreende todos os números inteiros não negativos (inclui o zero). Desta forma temos:</p>
+<p><span class="math display">\[\mathbb{N} = \{ 0,\ 1,\ 2,\ 3,\ ... \}\]</span></p>
+<p>Repare que o conjunto <span class="math inline">\(\mathbb{N}\)</span> é um subconjunto de <span class="math inline">\(\mathbb{Z}\)</span>, ou seja, <span class="math inline">\(\mathbb{N} \subset \mathbb{Z}\)</span>. Note também que <span class="math inline">\(\mathbb{N}\)</span> é equivalente a <span class="math inline">\(\mathbb{Z}_{+}\)</span>.</p>
+<p>Na notação dos conjuntos dos números naturais podemos definir somente o operador <span class="math inline">\(*\)</span> uma vez que, por natureza, ele só possui elementos não negativos.</p>
+<ol style="list-style-type: decimal">
+<li><p>Números naturais positivos</p>
+<p><span class="math inline">\(\mathbb{N}^{*} = \{ 1,\ 2,\ 3,\ ... \}\)</span></p></li>
 </ol>
-<p><span class="math display">\[\mathbb{Z}_{-} = \{...,\ -3,\ -2,\ -1,\ 0 \}\]</span></p>
-<ol start="4" style="list-style-type: decimal">
-<li>Números inteiros positivos</li>
+</div>
+<div id="numeros-racionais" class="section level2">
+<h2><span class="header-section-number">1.3</span> Números Racionais</h2>
+<p>O conjunto dos números naturais, denotado por <span class="math inline">\(\mathbb{Q}\)</span>, compreende todos os números da forma <span class="math inline">\(\frac{a}{b}\)</span> onde <span class="math inline">\(a \in \mathbb{Z}\)</span> e <span class="math inline">\(b \in \mathbb{Z}^{*}\)</span>. Desta forma temos:</p>
+<p><span class="math display">\[\mathbb{Q} = \{ \frac{a}{b} \mid \ a \in \mathbb{Z},\ b \in \mathbb{Z}^{*} \}\]</span></p>
+<p>Repare que o conjunto <span class="math inline">\(\mathbb{Z}\)</span> é subconjunto de <span class="math inline">\(\mathbb{Q}\)</span> e <span class="math inline">\(\mathbb{N}\)</span> é subconjunto de <span class="math inline">\(\mathbb{Z}\)</span>, ou seja <span class="math inline">\(\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q}\)</span>. Então podemos dizer que todos número natural é um número inteiro, e todo numero inteiro é um número racional, sendo assim todo número natural é também racional.</p>
+<p>Na notação dos números racionais estão definidos os três operadores.</p>
+<ol style="list-style-type: decimal">
+<li><p>Números racionais não-nulos</p>
+<p><span class="math inline">\(\mathbb{Q}^{*} = \{ \frac{a}{b} \mid \ a \in \mathbb{Z}^{*},\ b \in \mathbb{Z}^{*} \}\)</span></p></li>
+<li><p>Números racionais não negativos</p>
+<p><span class="math inline">\(\mathbb{Q}_{+} = \{ \frac{a}{b} \mid \ a \in \mathbb{Z}_{+},\ b \in \mathbb{Z}_{+}^{*} \}\)</span></p>
+<p><span class="math inline">\(\mathbb{Q}_{+} = \{ \frac{a}{b} \mid \ a \in \mathbb{Z}_{-},\ b \in \mathbb{Z}_{-}^{*} \}\)</span></p></li>
+<li><p>Números racionais não positivos</p>
+<p><span class="math inline">\(\mathbb{Q}_{-} = \{ \frac{a}{b} \mid \ a \in \mathbb{Z}_{-},\ b \in \mathbb{Z}_{+}^{*} \}\)</span></p>
+<p><span class="math inline">\(\mathbb{Q}_{-} = \{ \frac{a}{b} \mid \ a \in \mathbb{Z}_{+},\ b \in \mathbb{Z}_{-}^{*} \}\)</span></p></li>
+<li><p>Números racionais positivos</p>
+<p><span class="math inline">\(\mathbb{Q}_{+}^{*} = \{ \frac{a}{b} \mid \ a \in \mathbb{Z}_{+}^{*},\ b \in \mathbb{Z}_{+}^{*} \}\)</span></p>
+<p><span class="math inline">\(\mathbb{Q}_{+}^{*} = \{ \frac{a}{b} \mid \ a \in \mathbb{Z}_{-}^{*},\ b \in \mathbb{Z}_{-}^{*} \}\)</span></p></li>
+<li><p>Números racionais negativos</p>
+<p><span class="math inline">\(\mathbb{Q}_{-}^{*} = \{ \frac{a}{b} \mid \ a \in \mathbb{Z}_{-}^{*},\ b \in \mathbb{Z}_{+}^{*} \}\)</span></p>
+<p><span class="math inline">\(\mathbb{Q}_{-}^{*} = \{ \frac{a}{b} \mid \ a \in \mathbb{Z}_{+}^{*},\ b \in \mathbb{Z}_{-}^{*} \}\)</span></p></li>
 </ol>
-<p><span class="math display">\[\mathbb{Z}_{+}^{*} = \{ 1,\ 2,\ 3,\ ... \}\]</span></p>
-<ol start="5" style="list-style-type: decimal">
-<li>Números inteiros negativos</li>
-</ol>
-<p><span class="math display">\[\mathbb{Z}_{-}^{*} = \{...,\ -3,\ -2,\ -1 \}\]</span></p>
+</div>
+<div id="numeros-irracionais" class="section level2">
+<h2><span class="header-section-number">1.4</span> Números Irracionais</h2>
+</div>
+<div id="numeros-reais" class="section level2">
+<h2><span class="header-section-number">1.5</span> Números Reais</h2>
+</div>
+<div id="operacoes-com-conjuntos" class="section level2">
+<h2><span class="header-section-number">1.6</span> Operações com Conjuntos</h2>
 
 </div>
 </div>
