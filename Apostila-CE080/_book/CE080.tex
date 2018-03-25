@@ -82,7 +82,7 @@
   \preauthor{}\postauthor{}
   \predate{\centering\large\emph}
   \postdate{\par}
-  \date{2018-03-19}
+  \date{2018-03-24}
 
 \usepackage{booktabs}
 \usepackage{amsthm}
@@ -113,6 +113,19 @@ Buhrer Rizzato}}
 primeiro semestre de 2018 para os candidatos presentes na terceira fase
 de seleção de acadêmicos do curso de Estatística da Universidade Federal
 do Paraná (\href{http://www.ufpr.br/}{UFPR}).
+
+Os livros utilizados como texto-base são, principalmente, \emph{Um Curso
+de Cálculo, Volume 1, 5ª Edição} de \citet{guidorizzi2013curso} e
+\emph{Fundamentos de Matemática Elementar, Volume 1} de
+\citet{iezzi2004fundamentos}.
+
+Foi desenvolvido através do software
+\href{https://www.r-project.org/}{\citet{R-base} de computação
+estatística} com a utilização dos pacotes \emph{knitr} desenvolvido por
+\citet{R-knitr}, o \emph{rmarkdown} desenvolvido por \citet{R-rmarkdown}
+para geração de documentos dinâmicos no \emph{R} e o \emph{bookdown}
+desenvolvido por \citet{R-bookdown} para criação de livros e documentos
+técnicos em \emph{R Markdown}.
 
 \chapter{Conjuntos Numéricos}\label{conjuntos-numericos}
 
@@ -379,21 +392,41 @@ Um conjunto definido pela união de dois conjuntos quaisquer pode ser
 entendido como o conjunto que possui todos os elementos do primeiro
 conjunto e também todos os elementos do segundo conjunto. Denota-se:
 
-\[A \cup B = \{c \mid \ c \in A \ \text{ou} \ c \in B \}\]
+\[A \cup B = \{c \mid \ c \in A \ \text{ou} \ c \in B \}\] Dado
+\(A = \{ 1,\ 2,\ 3 \}\), \(B = \{ 1,\ 3,\ 5 \}\) e
+\(C = \{ 4,\ 5,\ 6 \}\) podemos calcular as seguintes uniões:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(A \cup B = \{ 1,\ 2,\ 3,\ 5 \}\)
+\item
+  \(A \cup C = \{ 1,\ 2,\ 3,\ 4,\ 5,\ 6 \}\)
+\item
+  \(B \cup C = \{ 1,\ 3,\ 4,\ 5,\ 6 \}\)
+\item
+  \(A \cup B \cup C = \{ 1,\ 2,\ 3,\ 4,\ 5,\ 6 \}\)
+\end{enumerate}
+
+Propriedades da união:
+
+\begin{enumerate}
+\def\labelenumi{\roman{enumi}.}
+\item
+  \(A \cup A = A\) (idempotente)
+\item
+  \(A \cup \varnothing = A\) (elemento neutro)
+\item
+  \(A \cup B = B \cup A\) (comutativa)
+\item
+  \((A \cup B) \cup C = A \cup (B \cup C)\) (associativa)
+\end{enumerate}
 
 \subsection{Intersecção de Conjuntos}\label{interseccao-de-conjuntos}
 
 \subsection{Diferença de Conjuntos}\label{diferenca-de-conjuntos}
 
 \subsection{Conjuntos Complementares}\label{conjuntos-complementares}
-
-\chapter{Sem Título}\label{sem-titulo}
-
-\chapter{Sem Título}\label{sem-titulo-1}
-
-\chapter{Sem Título}\label{sem-titulo-2}
-
-\chapter{Sem Título}\label{sem-titulo-3}
 
 \bibliography{book.bib,packages.bib}
 

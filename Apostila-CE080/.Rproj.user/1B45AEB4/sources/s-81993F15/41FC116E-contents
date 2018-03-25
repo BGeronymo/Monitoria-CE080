@@ -1,0 +1,218 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{float}
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+
+\usepackage{geometry}
+\geometry{a4paper, left=40mm, right=40mm, top=25mm, bottom=25mm}
+
+% Cores: http://latexcolor.com/.
+\usepackage{xcolor}
+\definecolor{utahcrimson}{rgb}{0.83, 0.0, 0.25}
+\newcommand{\tc}[1]{\textcolor{utahcrimson}{#1}}
+
+\usepackage{hyperref}
+\hypersetup{colorlinks = true}
+
+<< echo = FALSE >>=
+
+academic <- "Bruno Geronymo"
+
+setwd("~/Projetos/Estatística UFPR/Período 7/Pesquisa Reproduzível (Tópicos Especiais de Estatística II - CE062b)/Relatório Dinâmico")
+dados <- read.csv("dados.csv")
+
+len <- length(dados$data)
+
+d1 <- dados$data[1]
+d2 <- dados$data[len]
+
+dt1 <- as.POSIXct(x = d1, format = "%d/%m/%Y")
+dt2 <- as.POSIXct(x = d2, format = "%d/%m/%Y")
+
+str1 <- strftime(dt1, "%d/%m/%Y")
+str2 <- strftime(dt2, "%d/%m/%Y")
+@
+
+
+\title{Perfis de Vento e Radiação Solar em Curitiba para o período \tc{\Sexpr{str1}} a \tc{\Sexpr{str2}} }
+\author{Acadêmico \tc{\Sexpr{academic}}}
+\date{20 de março de 2018}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+\maketitle
+
+\section{Introdução}
+
+
+Tendo em vista as diversas vantagens que a energia eólica e solar nos trazem, planeja-se estudar a velocidade do vento e a radiação solar em Curitiba para instalação de uma usina na cidade.
+
+O foco do estudo é modelar os perfis de vento e de radiação solar. Como os dados eólicos não são coletados à altura de uma turbina eólica esse estudo não pode concluir nada a respeito da geração de energia de uma turbina eólica situada no local da estação meteorológica, apenas busca representar uma possível abordagem estocástica no tratamento de dados climáticos.
+
+\section{Materiais}
+
+Os dados foram coletados por uma Estação Meteorológica de Observação de Superfície Automática do \citet{INMET} em Curitiba (PR) entre os dias \tc{\Sexpr{str1}} e \tc{\Sexpr{str2}}. A modelagem dos dados foi feita através do software \citet{R} com o auxílio do pacote xtable, desenvolvido por \citet{xtable}, para a geração de relatórios dinâmicos.
+
+As variáveis consideradas neste estudo são os valores eólicos (vento) e a radiação. A amostragem dos valores eólicos foi medida em metros por segundo ($m/s$) e realizada uma vez por segundo e os valores na base de dados são referentes a uma média da velocidade do vento em um período de 1 hora de uma amostra de tamanho 3600. A amostragem da radiação foi medida em kilojoule por metro quadrado ($kJ/m^2$) e realizada uma vez a cada 5 segundos.
+
+\section{Métodos}
+
+Em teoria, os perfis de vento se modelam em um processo estocástico contínuo a tempo contínuo, porém não temos disponibilidade de dados num período contínuo de tempo para esta variável, pois a base de dados releva somente médias equivalentes a um período de 1 hora. Na prática, temos um processo contínuo a tempo discreto.
+
+Nesta abordagem transformaremos a variável velocidade do vento e a radiação em uma variável discreta, onde consideraremos que se o vento e a radiação assumirem valores num determinado intervalo eles receberão um atributo correspondente ao mesmo intervalo, sendo assim teremos um processo discreto a tempo discreto. Dado o processo discreto a tempo discreto estimamos as probabilidades de transição de um estado para outro através da proporção de ocorrências de cada transição, como sugerido em \citet[p. 115]{barros2009processos}.
+
+\section{Resultados e Discussão}
+
+<< echo = FALSE >>=
+nv <- nclass.Sturges(dados[, 16])
+nr <- nclass.Sturges(dados[, 19])
+n <- min(nv, nr)
+
+ndados <- dados[, c(2, 3, 16, 19)]
+
+av <- min(ndados[, 3])
+bv <- max(ndados[, 3])
+cv <- (bv-av)/n
+dv <- seq(av, bv, cv)
+
+ar <- min(ndados[, 4])
+br <- max(ndados[, 4])
+cr <- (br-ar)/n
+dr <- seq(ar, br, cr)
+
+for (i in seq(n, 1)) {
+  ndados[which(ndados[, 3] <= dv[i + 1]), 5] <- i
+  ndados[which(ndados[, 4] <= dr[i + 1]), 6] <- i
+}
+
+matv <- matrix(0, nrow = n, ncol = n)
+
+matr <- matrix(0, nrow = n, ncol = n)
+
+for (j in 1:n) {
+  for (k in 1:n) {
+    for (l in 1:(len -1)) {
+      if (ndados$V5[l] == j & ndados$V5[l + 1] == k) {
+        matv[j, k] <- matv[j, k] + 1
+      }
+      if (ndados$V6[l] == j & ndados$V6[l + 1] == k) {
+        matr[j, k] <- matr[j, k] + 1
+      }
+      }
+  }
+}
+
+matvp <- matv / matrix(rowSums(matv), nrow = n, ncol = n)
+matrp <- matr / matrix(rowSums(matr), nrow = n, ncol = n)
+
+
+pv <- matvp %*% matvp
+pr <- matrp %*% matrp
+
+for (m in 1:100000) {
+  pv <- pv %*% matvp
+  pr <- pr %*% matrp
+}
+
+dimnames(pv) <- list(1:n, 1:n)
+dimnames(pr) <- list(1:n, 1:n)
+
+pvr <- matrix(c(pv[1, ], pr[1, ]), byrow = TRUE, nrow = 2, dimnames = list(c("Vento", "Radiação"), 1:n))
+
+@
+
+Para a transformação da variável velocidade do vento e radiação utilizaremos a regra de Sturges. Ao aplicarmos a regra de Sturges para a variável velocidade do vento e para a variável radiação é possível que obtenhamos resultados distintos. Para fins de facilitar a visualização gráfica escolheremos pelo número de classes mínimo entre as calculadas.
+
+<< echo = FALSE, results = tex >>=
+ev <- matrix(c("-", rep(round(dv[2:n], 2), each = 2), "-"), nrow = 2)
+
+dimnames(ev) <- list(c("Lim. Inf.", "Lim. Sup."), Estados = 1:n)
+
+library(xtable)
+print(xtable(ev, caption = "Classes para os valores eólicos em metros por segund ($m/s$) pela regra de Sturges ($k = 1 + 3.3log(n)$)."), table.placement = "H")
+
+@
+
+
+<< echo = FALSE, results = tex >>=
+er <- matrix(c("-", rep(round(dr[2:n], 1), each = 2), "-"), nrow = 2)
+
+dimnames(er) <- list(c("Lim. Inf.", "Lim. Sup."), Estados = 1:n)
+
+print(xtable(er, caption = "Classes para a radiação em kilojoules por metro quadrado ($kJ/m^2$) pela regra de Sturges ($k = 1 + 3.3log(n)$)."), table.placement = "H")
+@
+
+
+Com as classes já definidas, foram estimadas as matrizes de transição para ambas as variáveis. Essas matrizes nos dão a probabilidade estimada de que partindo de um estado i cheguemos a um estado j em um passo, sendo i a linha e j a coluna. Considerando a variável velocidade do vento, 1 passo equivale a velocidade do vento daqui 1 hora. Considerando a variável radiação, 1 passo equivale a radiação daqui 1 hora.
+
+Após a obtenção das matrizes de transição foi calculado a distribuição estacionária de cada cadeia. A distribuição estacionária nos permite uma melhor visualização e interpretação com relação aos estados predominantes na cadeia.
+
+<< echo = FALSE , fig = TRUE >>=
+barplot(pvr, col = c("darkturquoise", "red"), main = "Distribuição Estacionária dos Valores Eólicos e Radiação", xlab = "Estados", ylab = "Probabilidades Estacionárias", beside = TRUE, legend.text = T)
+@
+
+Podemos, a partir desta distribuição, estimar o tempo de permanência médio em um determinado estado considerando o período em que os dados foram coletados. A estimativa deste tempo considera a média das distribuições estacionárias para a variável velocidade do vento e radiação.
+
+<< echo = FALSE, results = tex >>=
+tot <- (as.numeric(dt2 - dt1) + 1)*24
+
+tm <- pvr*tot
+
+print(xtable(tm, caption = paste("Estimativa do tempo médio de permanência (em horas) em um estado para as variáveis velocidade do vento e radiação, considerando um período de", tot, "horas.")), table.placement="H")
+
+twhiv <- which.max(tm[1, ])
+twhir <- which.max(tm[2, ])
+
+tmaxv <- round(max(tm[1, ]), 1)
+tmaxr <- round(max(tm[2, ]), 1)
+
+med <- rowSums(pvr*rep(1:n, each = 2))
+tv <- trunc(med[1])
+tr <- trunc(med[2])
+
+vem <- round(c(dv[tv], dv[tv + 1]), 2)
+ram <- round(c(dr[tr], dr[tr + 1]), 2)
+
+if (med[1] < 2) {
+  text1 <- "a velocidade do vento é muito baixa e uma usina eólica produziria uma quantidade muito baixa de energia no local e período deste estudo."
+} else if (med[1] >= 2 & med[1] < 3) {
+  text1 <- "a velocidade do vento é baixa e uma usina eólica produziria uma quantidade baixa de energia no local e período deste estudo, recomenda-se realizar estudos com outras possíveis abordagens."
+} else  if (med[1] >= 3 & med[1] < 4) {
+  text1 <- "a velocidadde do vento é razoável para o período considerado e mais estudos com modelagens estocásticas podem ser feitos para considerar a instalação de uma usina eólica no local do presente estudo."
+} else {
+  text1 <- "a velocidade do vento é boa e possivelmente uma usina eólica poderá ser instalada no local, recomenda-se um estudo de modelagem estocástica da velocidade do vento a altura da turbina considerando um processo contínuo a tempo contínuo."
+}
+
+
+if (med[2] < 2) {
+  text2 <- "a radiação solar é muito baixa e uma usina solar produziria uma quantidade muito baixa de energia no local e período deste estudo."
+} else if (med[2] >= 2 & med[2] < 3) {
+  text2 <- "a radiação solar é baixa e provavelmente uma usina solar produziria uma quantidade baixa de energia no local e período deste estudo, recomenda-se realizar estudos com outras possíveis abordagens."
+} else  if (med[2] >= 3 & med[2] < 4) {
+  text2 <- "a radiação solar é razoável para o período considerado e mais estudos com modelagens estocásticas podem ser feitos para considerar a instalação de uma usina solar no local do presente estudo."
+} else {
+  text2 <- "a radiação solar é boa e possivelmente uma usina solar poderá ser instalada no local, recomenda-se um estudo de modelagem estocástica da velocidade do vento a altura da turbina considerando um processo contínuo a tempo contínuo."
+}
+
+@
+
+Para os valores eólicos podemos observar que, considerando um período de \tc{\Sexpr{tot}} horas, o estado \tc{\Sexpr{twhiv}} é o mais recorrente, sendo que neste foram gastos \tc{\Sexpr{tmaxv}} horas durante o período considerado. Já para a radiação solar podemos observar que, considerando um período de \tc{\Sexpr{tot}} horas, o estado \tc{\Sexpr{twhir}} é o mais recorrente, sendo que neste foram gastos \tc{\Sexpr{tmaxr}} horas durante o período considerado.
+
+Considerando os \tc{\Sexpr{n}} estados o processo permanece em média no estado \tc{\Sexpr{tv}} para os valores eólicos, ou seja, a velocidade do vento permanece em média entre \tc{\Sexpr{vem[1]}} e \tc{\Sexpr{vem[2]}} $m/s$. Portanto \tc{\Sexpr{text1}}
+
+Considerando os \tc{\Sexpr{n}} estados o processo permanece em média no estado \tc{\Sexpr{tr}} para a radiação solar, ou seja, a radiação solar permanece em média entre \tc{\Sexpr{ram[1]}} e \tc{\Sexpr{ram[2]}} $kJ/m^2$. Portanto \tc{\Sexpr{text2}}
+
+\section{Considerações Finais}
+
+O objetivo deste trabalho foi estudar a aplicação de processos estocásticos em perfis de vento e radiação solar, dada a importância de energia sustentável.
+
+Concluiu-se que as cadeias de Morkov servem como boa aproximação para processos contínuos a tempo discreto, ganhando vantagem na possibilidade de realizar algumas interpretações baseadas nas matrizes de transição e na distribuição estacionária, permitindo inclusive calcular o tempo de permanência em um determinado estado.
+
+O estudo se mostra importante, visto que usinas mal posicionadas geograficamente podem trazer um alto prejuízo para o Estado.
+
+\bibliography{refs}
+
+\end{document}

@@ -1,0 +1,6 @@
+book_filename: "CE080"
+language:
+  ui:
+    chapter_name: "Capítulo "
+delete_merged_file: true
+before_chapter_script: "setup.R"

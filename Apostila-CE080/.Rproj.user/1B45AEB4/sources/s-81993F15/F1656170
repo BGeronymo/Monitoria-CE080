@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1521936262532.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "F1656170",
+    "lastKnownWriteTime" : 1521937444,
+    "last_content_update" : 1521937444510,
+    "path" : "~/Projetos/Monitoria-CE080/Apostila-CE080/index.Rmd",
+    "project_path" : "index.Rmd",
+    "properties" : {
+        "cursorPosition" : "17,0",
+        "scrollLine" : "12"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
