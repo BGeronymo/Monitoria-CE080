@@ -1,7 +1,9 @@
 --- 
 title: "CE080 - FUNDAMENTOS BÁSICOS PARA ESTATÍSTICA"
-author: ""
-date: "`r Sys.Date()`"
+author:
+- Bruno Geronymo^[Universidade Federal do Paraná]
+- Fernanda Buhrer Rizzato^[Universidade Federal do Paraná]
+date: "`r format(Sys.time(), '%d de %B de %Y')`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
