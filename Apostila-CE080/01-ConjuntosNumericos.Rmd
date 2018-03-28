@@ -6,6 +6,11 @@ definir o conjunto dos números pares positivos como:
 
 $$P = \{ 2,\ 4,\ 6,\ 8,\ 10,\ 12,\ ...\}$$
 
+```{r, echo=TRUE}
+plot(c(1,2,3)~c(3,2,1))
+```
+
+
 Onde a característica em comum entre os elementos de $P$ é a satisfação dos
 requisitos: i) ser par; ii) ser positivo.
 
