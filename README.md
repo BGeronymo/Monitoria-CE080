@@ -16,4 +16,4 @@ Para acessar o material basta abrir a pasta [Apostila-CE080](https://github.com/
 
 Desenvolvido por [*Bruno Geronymo*](https://bgeronymo.github.io) (Estudante de Estatística na [UFPR](http://www.ufpr.br)) e orientado pela [*Fernanda Buhrer Rizzato*](http://leg.ufpr.br/doku.php/pessoais:fernanda) (Professora do Departamento de Estatística da [UFPR](http://www.ufpr.br)). Trata-se de um resumo válido para a primeira prova da parte de pré-cálculo voltado aos alunos do PSE de Estatística do ano de 2018.
 
-Para acessar o material basta abrir o arquivo [prova1.pdf]()
+Para acessar o material basta abrir o arquivo [prova1.pdf](https://github.com/BGeronymo/Monitoria-CE080/blob/master/prova1.pdf).
