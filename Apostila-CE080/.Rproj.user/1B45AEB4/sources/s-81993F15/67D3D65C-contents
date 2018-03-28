@@ -1,6 +1,0 @@
-Package: placeholder
-Type: Book
-Title: CE080 - FUNDAMENTOS BÁSICOS PARA ESTATÍSTICA
-Version: 0.0.1
-Imports: bookdown
-Remotes: BGeronymo/Monitoria-CE080
