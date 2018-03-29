@@ -8,7 +8,7 @@ Os materiais a seguir buscam auxiliar na compreensão e nos estudos dos assuntos
 
 ### Material de Apoio - CE080 (Pré-cálculo)
 
-Desenrvolvido por [*Bruno Geonymo*](https://bgeronymo.github.io) (Estudante de Estatística na [UFPR](http://www.ufpr.br)), [Matheus Born Cabús](https://github.com/cabusm) (Estudante de Estatística na [UFPR](http://www.ufpr.br)) e orientado pela [*Fernanda Buhrer Rizzato*](http://leg.ufpr.br/doku.php/pessoais:fernanda) (Professora do Departamento de Estatística da [UFPR](http://www.ufpr.br)). Trata-se de um material de apoio que poderá servir de texto-base para o ensino e aprendizado de pré-cálculo aos alunos do PSE de Estatística.
+Desenrvolvido por [*Bruno Geonymo*](https://bgeronymo.github.io) (Estudante de Estatística na [UFPR](http://www.ufpr.br)), [*Matheus Born Cabús*](https://github.com/cabusm) (Estudante de Estatística na [UFPR](http://www.ufpr.br)) e orientado pela [*Fernanda Buhrer Rizzato*](http://leg.ufpr.br/doku.php/pessoais:fernanda) (Professora do Departamento de Estatística da [UFPR](http://www.ufpr.br)). Trata-se de um material de apoio que poderá servir de texto-base para o ensino e aprendizado de pré-cálculo aos alunos do PSE de Estatística.
 
 Para acessar o material basta abrir a pasta [Apostila-CE080](https://github.com/BGeronymo/Monitoria-CE080/tree/master/Apostila-CE080), em seguida a pasta [_book](https://github.com/BGeronymo/Monitoria-CE080/tree/master/Apostila-CE080/_book) e abrir o arquivo [CE080.pdf](https://github.com/BGeronymo/Monitoria-CE080/blob/master/Apostila-CE080/_book/CE080.pdf).
 
