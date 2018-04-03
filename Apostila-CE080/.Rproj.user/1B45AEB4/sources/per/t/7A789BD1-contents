@@ -3,7 +3,6 @@ title: "CE080 - FUNDAMENTOS BÁSICOS PARA ESTATÍSTICA"
 author:
 - Bruno Geronymo^[Universidade Federal do Paraná]
 - Fernanda Buhrer Rizzato^[Universidade Federal do Paraná]
-- Matheus Born Cabús^[Universidade Federal do Paraná]
 date: "`r format(Sys.time(), '%d de %B de %Y')`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
